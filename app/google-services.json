@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "283331653567",
+    "project_id": "projetmobile-a1022",
+    "storage_bucket": "projetmobile-a1022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283331653567:android:cf5c86ee10a134bf013b0a",
+        "android_client_info": {
+          "package_name": "com.example.e_commerce"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtRy_mjDFa8BDeta4LYiunypy2kI_-dy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283331653567:android:1e9604b579a4365c013b0a",
+        "android_client_info": {
+          "package_name": "com.example.projetmobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtRy_mjDFa8BDeta4LYiunypy2kI_-dy0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
