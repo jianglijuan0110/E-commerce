@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.detailsUser.DetailsUserFragment">
+    tools:context=".view.detailsUser.UserDetailsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,19 +23,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-
-                <ImageView
-                    android:id="@+id/imageCloseUserAccount"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_close"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tint="@color/black" />
-
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -44,9 +31,9 @@
                     android:text="Mon compte"
                     android:textColor="@color/black"
                     android:textSize="20sp"
-                    app:layout_constraintBottom_toBottomOf="@id/imageCloseUserAccount"
-                    app:layout_constraintStart_toStartOf="@id/imageCloseUserAccount"
-                    app:layout_constraintTop_toTopOf="@id/imageCloseUserAccount" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
@@ -67,22 +54,11 @@
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:layout_marginTop="24dp"
-            android:src="@color/black"
+            android:src="@drawable/ic_profile"
             app:layout_constraintEnd_toEndOf="@id/rightGuideline"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toBottomOf="@+id/toolbarUserAccount" />
-
-        <ImageView
-            android:id="@+id/imageEdit"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/settings_items_background"
-            android:backgroundTint="#5E85F9"
-            android:src="@drawable/ic_edit"
-            app:layout_constraintBottom_toBottomOf="@id/imageUser"
-            app:layout_constraintEnd_toEndOf="@id/imageUser" />
 
 
         <EditText
@@ -131,15 +107,6 @@
             app:layout_constraintStart_toStartOf="@id/leftGuideline"
             app:layout_constraintTop_toBottomOf="@id/edLastName" />
 
-        <TextView
-            android:id="@+id/tvUpdatePassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="Changer de mot de passe"
-            app:layout_constraintStart_toStartOf="@id/leftGuideline"
-            app:layout_constraintTop_toBottomOf="@+id/edEmail" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/leftGuideline"
             android:layout_width="wrap_content"
@@ -153,6 +120,18 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.96" />
+
+        <Button
+            android:id="@+id/saveInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enrégistrer les informations"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+            app:layout_constraintHorizontal_bias="0.544"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edEmail"
+            app:layout_constraintVertical_bias="0.569" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

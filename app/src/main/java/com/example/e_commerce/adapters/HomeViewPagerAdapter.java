@@ -14,7 +14,7 @@ public class HomeViewPagerAdapter extends FragmentStateAdapter {
     public HomeViewPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, @NonNull List<Fragment> fragments) {
         super(fragmentManager, lifecycle);
         if (fragments == null) {
-            throw new IllegalArgumentException("Fragments list cannot be null");
+            throw new IllegalArgumentException("La liste des fragments ne peut être null");
         }
         this.fragments = fragments;
     }
