@@ -3,6 +3,7 @@ package com.example.e_commerce.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,21 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.e_commerce.R;
-import com.example.e_commerce.data.model.Produit;
+import com.example.e_commerce.model.model.Produit;
 
 import java.util.List;
 
 public class ProduitAdapter extends RecyclerView.Adapter<ProduitAdapter.ProduitViewHolder> {
     private List<Produit> listProduits;
 
-    public ProduitAdapter(List<Produit> listProduits) {
-        this.listProduits = listProduits;
-    }
-
     private OnItemClickedListner onItemClickedListner;
 
     public void setListProduits(List<Produit> listProduits) {
         this.listProduits = listProduits;
+    }
+
+    public List<Produit> getListProduits() {
+        return listProduits;
     }
 
     public ProduitAdapter(OnItemClickedListner onItemClickedListner) {
@@ -72,16 +73,24 @@ public class ProduitAdapter extends RecyclerView.Adapter<ProduitAdapter.ProduitV
             img_product = itemView.findViewById(R.id.img_product);
             priceProduct = itemView.findViewById(R.id.priceProduct);
             layoutProduct = itemView.findViewById(R.id.layoutProduct);
+
             layoutProduct.setOnClickListener(this);
+
+            // Ajouter le clic sur le bouton "Voir le détail"
+            Button btnDetail = itemView.findViewById(R.id.detailButton);
+            btnDetail.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
-            onItemClickedListner.onItemClick(getAdapterPosition());
+           if (v.getId() == R.id.detailButton) {
+                onItemClickedListner.onDetailButtonClick(getAdapterPosition());
+            }
+            //onItemClickedListner.onItemClick(getAdapterPosition());
         }
     }
     public interface OnItemClickedListner{
-        void onItemClick(int position);
+        void onDetailButtonClick(int position);
     }
 
 }
