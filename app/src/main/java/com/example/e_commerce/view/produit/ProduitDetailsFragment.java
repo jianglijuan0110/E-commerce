@@ -1,5 +1,6 @@
 package com.example.e_commerce.view.produit;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.e_commerce.R;
 import com.example.e_commerce.model.model.Produit;
+import com.example.e_commerce.view.bottom_menu.HomeFragment;
 import com.example.e_commerce.viewModel.PanierDetailsViewModel;
 
 public class ProduitDetailsFragment extends Fragment {
@@ -121,11 +123,10 @@ public class ProduitDetailsFragment extends Fragment {
             public void onClick(View v) {
                 panierDetailsViewModel.ajouterAuPanier(produit,selectedQuantite);
 
-                /*Intent intent = new Intent(requireActivity(), HomeFragment.class);
-                startActivity(intent);*/
+                Intent intent = new Intent(requireActivity(), HomeFragment.class);
+                startActivity(intent);
 
                 Toast.makeText(requireContext(), "Produit ajouté avec succès au panier !", Toast.LENGTH_SHORT).show();
-                //navController.navigate(R.id.action_prod);
             }
         });
 

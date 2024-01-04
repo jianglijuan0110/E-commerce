@@ -14,16 +14,13 @@ public class UserDetailsViewModel extends ViewModel {
     private ClientRepository clientRepository;
     private MutableLiveData<Client> clientInfoLiveData = new MutableLiveData<>();
     private MutableLiveData<List<Panier>> panierProduitsLiveData = new MutableLiveData<>();
-    //private LiveData<List<Panier>> panierProduitsLiveData;
+
     private MutableLiveData<Double> totalPriceLiveData = new MutableLiveData<>();
 
     public UserDetailsViewModel(){
         this.clientRepository = new ClientRepository();
         loadClientInfo();
         loadPanierProduits();
-
-        // Observer pour les changements dans la liste des produits du panier
-        //panierProduitsLiveData = clientRepository.getPanierProduitsLiveData();
     }
 
     public LiveData<Client> getClientInfo() {
@@ -42,13 +39,6 @@ public class UserDetailsViewModel extends ViewModel {
                 // Handle error if needed
             }
         });
-    }
-
-    /*public LiveData<List<Panier>> getPanierProduits() {
-        return panierProduitsLiveData;
-    }*/
-    public LiveData<List<Panier>> getPanierProduitsLiveData() {
-        return panierProduitsLiveData;
     }
 
     private void loadPanierProduits() {
@@ -102,12 +92,7 @@ public class UserDetailsViewModel extends ViewModel {
         clientRepository.decrementQuantityInPanier(idPanier);
     }
 
-
-    //////////////////////////////////////////////////////////////////
-
     public LiveData<List<Panier>> getPanierProduits() {
         return clientRepository.getPanierProduitsLiveData();
     }
-
-
 }

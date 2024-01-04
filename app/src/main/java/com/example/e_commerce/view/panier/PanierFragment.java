@@ -96,13 +96,7 @@ public class PanierFragment extends Fragment implements ProduitPanierAdapter.OnI
 
     }
 
-    /*private void updateTotalPriceUI(double totalPrice) {
-        // Mettez à jour le TextView du prix total avec la nouvelle valeur
-        this.totalPrice.setText(String.valueOf(totalPrice) + " EURO");
 
-        // Mettez à jour la visibilité du conteneur totalBoxContainer en fonction du prix total
-        totalBoxContainer.setVisibility(totalPrice > 0 ? View.VISIBLE : View.INVISIBLE);
-    }*/
     private void updateTotalPriceUI(double totalPrice) {
         // Mettez à jour le TextView du prix total avec la nouvelle valeur
         this.totalPrice.setText(String.valueOf(totalPrice) + " EURO");
