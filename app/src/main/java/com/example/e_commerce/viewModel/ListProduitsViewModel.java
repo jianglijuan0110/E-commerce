@@ -10,11 +10,11 @@ import com.example.e_commerce.model.repository.ProduitRepository;
 
 import java.util.List;
 
-public class MainCategoryViewModel extends ViewModel {
+public class ListProduitsViewModel extends ViewModel {
     private ProduitRepository produitRepository;
     private MutableLiveData<List<Produit>> produitsLiveData;
 
-    public MainCategoryViewModel() {
+    public ListProduitsViewModel() {
         this.produitsLiveData = new MutableLiveData<>();
         this.produitRepository = new ProduitRepository();
     }

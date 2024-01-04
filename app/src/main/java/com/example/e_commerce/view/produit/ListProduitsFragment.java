@@ -1,4 +1,4 @@
-package com.example.e_commerce.view.categories;
+package com.example.e_commerce.view.produit;
 
 import android.os.Bundle;
 
@@ -17,11 +17,10 @@ import android.view.ViewGroup;
 import com.example.e_commerce.R;
 import com.example.e_commerce.adapters.ProduitAdapter;
 import com.example.e_commerce.model.model.Produit;
-import com.example.e_commerce.view.produit.ProduitDetailsFragment;
-import com.example.e_commerce.viewModel.MainCategoryViewModel;
+import com.example.e_commerce.viewModel.ListProduitsViewModel;
 
-public class MainCategoryFragment extends Fragment implements ProduitAdapter.OnItemClickedListner {
-    private MainCategoryViewModel mainCategoryViewModel;
+public class ListProduitsFragment extends Fragment implements ProduitAdapter.OnItemClickedListner {
+    private ListProduitsViewModel listProduitsViewModel;
     private ProduitAdapter adapter;
     private RecyclerView rvSpecialProducts;
 
@@ -30,13 +29,13 @@ public class MainCategoryFragment extends Fragment implements ProduitAdapter.OnI
         super.onCreate(savedInstanceState);
 
         // Initialiser le ViewModel en utilisant ViewModelProvider
-        mainCategoryViewModel = new ViewModelProvider(this).get(MainCategoryViewModel.class);
+        listProduitsViewModel = new ViewModelProvider(this).get(ListProduitsViewModel.class);
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_main_category, container, false);
+        return inflater.inflate(R.layout.fragment_list_produits, container, false);
     }
 
     @Override
@@ -51,7 +50,7 @@ public class MainCategoryFragment extends Fragment implements ProduitAdapter.OnI
         rvSpecialProducts.setAdapter(adapter);
 
         // Observer la LiveData pour mettre à jour l'interface utilisateur lorsque la liste des produits change
-        mainCategoryViewModel.getProduitsLiveData().observe(getViewLifecycleOwner(), produits -> {
+        listProduitsViewModel.getProduitsLiveData().observe(getViewLifecycleOwner(), produits -> {
             // Mettre à jour l'adaptateur avec la nouvelle liste de produits
             if (produits != null) {
                 Log.d("LISTE PRODUITS", String.valueOf(produits.size()));
@@ -61,7 +60,7 @@ public class MainCategoryFragment extends Fragment implements ProduitAdapter.OnI
         });
 
         // Appeler la méthode pour récupérer tous les produits
-        mainCategoryViewModel.getAllProduits();
+        listProduitsViewModel.getAllProduits();
 
     }
 

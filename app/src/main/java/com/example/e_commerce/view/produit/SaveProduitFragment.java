@@ -33,7 +33,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class ProduitFragment extends Fragment {
+public class SaveProduitFragment extends Fragment {
     private ActivityResultLauncher<Intent> pickImageLauncher;
     private ProduitViewModel produitViewModel;
     private EditText edName, edDescription, edPrice;
@@ -51,7 +51,7 @@ public class ProduitFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_produit, container, false);
+        return inflater.inflate(R.layout.fragment_save_produit, container, false);
     }
 
     @Override

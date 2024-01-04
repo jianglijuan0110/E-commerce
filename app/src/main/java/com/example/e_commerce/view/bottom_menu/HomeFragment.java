@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 
 import com.example.e_commerce.R;
 import com.example.e_commerce.adapters.HomeViewPagerAdapter;
-import com.example.e_commerce.view.categories.MainCategoryFragment;
-import com.example.e_commerce.view.produit.ProduitFragment;
+import com.example.e_commerce.view.produit.ListProduitsFragment;
+import com.example.e_commerce.view.produit.SaveProduitFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
@@ -40,8 +40,8 @@ public class HomeFragment extends Fragment {
 
         // Initialiser la liste de fragments
         List<Fragment> categoriesFragments = new ArrayList<>();
-        categoriesFragments.add(new MainCategoryFragment());
-        categoriesFragments.add(new ProduitFragment());
+        categoriesFragments.add(new ListProduitsFragment());
+        categoriesFragments.add(new SaveProduitFragment());
 
         // Créer l'adaptateur pour le ViewPager
         viewPagerAdapter = new HomeViewPagerAdapter(getChildFragmentManager(), getLifecycle(), categoriesFragments);

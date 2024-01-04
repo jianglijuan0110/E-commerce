@@ -125,9 +125,5 @@ public class ProduitRepository {
                 .addOnFailureListener(failureListener);
     }
 
-    public void deleteProduit(){
-
-    }
-
 }
 

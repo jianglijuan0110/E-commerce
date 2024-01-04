@@ -6,6 +6,10 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.e_commerce.model.model.Produit;
 import com.example.e_commerce.model.repository.ProduitRepository;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+
+import java.util.List;
 
 public class ProduitViewModel extends ViewModel {
     private ProduitRepository produitRepository;
@@ -17,4 +21,5 @@ public class ProduitViewModel extends ViewModel {
     public void saveProduit(Produit produit, Uri imageUri){
         produitRepository.saveProduit(produit,imageUri);
     }
+
 }
